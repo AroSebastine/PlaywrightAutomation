@@ -1,7 +1,5 @@
 import { Locator, Page } from "@playwright/test"
 
-//export const locator: Locator = page.getByLabel("")  
-
 export class NaveenRetailStore {
 
     usernameTextbox: Locator
