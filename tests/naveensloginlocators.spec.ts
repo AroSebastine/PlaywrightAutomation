@@ -10,6 +10,15 @@ test('select an element from multiple elements', async( {page} ) => {
     const allLinks: Locator = naveenRetailStore.allRightNavigationLinks
     const allLinkTexts: string[] = await allLinks.allInnerTexts()
 
+    const footerLinkText: Locator[] = await naveenRetailStore.footerLinks.all()
+
+    // for (let e of footerLinkText) {
+    //     console.log(await e.innerText());
+    // }
+
+    const allLinksInThePage: string[] = await naveenRetailStore.allLinks.allInnerTexts()
+    console.log(allLinksInThePage);
+
     // for(const text of allLinkTexts) {    
 
     //     if (text === 'Forgotten Password') {
@@ -34,17 +43,17 @@ test('select an element from multiple elements', async( {page} ) => {
         
     // }
 
-    for(let i = 0; i < allLinkTexts.length; i++) {
+    // for(let i = 0; i < allLinkTexts.length; i++) {
 
-        console.log(allLinkTexts[i]);
+    //     console.log(allLinkTexts[i]);
 
-        if (allLinkTexts[i] === 'Forgotten Password') {
-            await allLinks.filter({ hasText: allLinkTexts[i] }).click()
-            break
-        }
+    //     if (allLinkTexts[i] === 'Forgotten Password') {
+    //         await allLinks.filter({ hasText: allLinkTexts[i] }).click()
+    //         break
+    //     }
 
 
-    }
+    // }
 
     await page.pause()
     
