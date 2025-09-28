@@ -3,3 +3,7 @@ export const naveenAutomationLabsLogin = {
     "username": "arosebastinenishanth@gmail.com",
     "password": "Aro987!"
 }
+
+export const freeCRMLogin = {
+    "url": "https://classic.freecrm.com/register/",
+}
