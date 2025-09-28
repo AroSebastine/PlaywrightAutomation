@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test'
+import * as login from '../data/login.ts'
 
 test('free crm register a user', async({ page }) => {
-    await page.goto('https://classic.freecrm.com/register/')
+    await page.goto(login.freeCRMLogin.url)
 
     const editionCombobox = page.getByRole('combobox')
     const firstNameTextbox = page.getByRole('textbox', { name: 'First Name' })

@@ -7,6 +7,7 @@ export class NaveenRetailStore {
     loginButton: Locator
     searchTextbox: Locator
     searchButton: Locator
+    allRightNavigationLinks: Locator
 
 
     constructor(page: Page) {
@@ -15,6 +16,7 @@ export class NaveenRetailStore {
         this.loginButton = page.getByRole('button', { name: "Login" }) 
         this.searchTextbox = page.getByPlaceholder('Search')
         this.searchButton = page.locator(".btn-default.btn-lg")
+        this.allRightNavigationLinks = page.locator('a.list-group-item')
     }
  
 }
