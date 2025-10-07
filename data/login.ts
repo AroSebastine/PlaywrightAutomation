@@ -5,5 +5,11 @@ export const naveenAutomationLabsLogin = {
 }
 
 export const freeCRMLogin = {
-    "url": "https://classic.freecrm.com/register/",
+    "url": "https://classic.freecrm.com/register",
+}
+
+export const freeCRMProLogin = {
+    "url": "https://classic.crmpro.com/",
+    "username": "arosebastinenishanth",
+    "password": "Aro123!",
 }
