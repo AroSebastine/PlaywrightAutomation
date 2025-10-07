@@ -1,5 +1,6 @@
 export const naveenAutomationLabsLogin = {
     "url": "https://naveenautomationlabs.com/opencart/index.php?route=account/login",
+    "register-url": "https://naveenautomationlabs.com/opencart/index.php?route=account/register",
     "username": "arosebastinenishanth@gmail.com",
     "password": "Aro987!"
 }

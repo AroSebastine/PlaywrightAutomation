@@ -7,6 +7,4 @@ test('spicejet test', async({ page }) => {
     await page.getByText('Add-ons', { exact: true }).hover()
     await page.getByTestId('test-id-Taxi').click()    
     await page.pause()
-
-
 })
