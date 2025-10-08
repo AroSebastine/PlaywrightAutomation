@@ -9,7 +9,7 @@ test('js alerts tests', async({ page }) => {
 
     // prompt - requests an user input  + OK and Cancel
 
-    page.on('dialog', async dialog => {
+    page.on('dialog', async(dialog) => {
         console.log(dialog.message());
         console.log(dialog.type());
         // await dialog.accept()
