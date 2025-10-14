@@ -17,12 +17,8 @@ test('scroll into view test', async ({ page }) => {
         // window.scroll(0, document.body.scrollHeight) // either .body or .documentElement can be used.
         await new Promise(resolve => setTimeout(resolve, 5000));
         // top
-        window.scroll(0, 0)
-
+        window.scroll(0, 0)        
     })
-
-
-
 
     await page.pause()
 
