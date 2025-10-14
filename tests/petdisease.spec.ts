@@ -16,12 +16,12 @@ test('US pet disease map', async({ page }) => {
         // console.log(boundingBox);
         if(boundingBox) {
            await page.mouse.move((boundingBox.width/2 + boundingBox.x), (boundingBox.height/2 + boundingBox.y)) 
-           await page.waitForTimeout(500)
+           await page.waitForTimeout(100)
         }
         // await page.mouse.move((boundingBox?.height + boundingBox.y/2), (boundingBox?.width + boundingBox.y/2))
         
         console.log(await stateLocator.getAttribute('id'));
-        await page.waitForTimeout(500)
+        await page.waitForTimeout(100)
     }
 
     await page.pause()
