@@ -42,8 +42,8 @@ test('scroll into view test', async ({ page }) => {
         fullPage: true,
     })
 
-
-
+    const imageBuffer: Buffer = await page.screenshot()
+    console.log(imageBuffer.length);
 
 
     await page.pause()
