@@ -7,3 +7,4 @@
 /playwright/.cache/
 /.env
 /tests-examples/
+/screenshots
