@@ -42,6 +42,7 @@ test('scroll into view test', async ({ page }) => {
         fullPage: true,
     })
 
+    // E.g. buffer is useful when uploading screenshot buffers to allure report api
     const imageBuffer: Buffer = await page.screenshot()
     console.log(imageBuffer.length);
 
