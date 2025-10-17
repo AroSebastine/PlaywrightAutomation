@@ -4,14 +4,19 @@ let browser: Browser
 let context: BrowserContext
 let page: Page
 
-test('new windows test', async() => {
+test('new windows test', async () => {
 
     browser = await chromium.launch({
         headless: false,
         channel: 'chrome'
     })
 
-    context = await browser.newContext()
+    context = await browser.newContext({
+        recordVideo: {
+            dir: './videos/', // Specify the directory to save videos
+            size: { width: 1280, height: 720 } // Optional: set video dimensions
+        }
+    })
     page = await context.newPage()
 
     await page.goto('https://www.orangehrm.com/en/contact-sales')
@@ -19,9 +24,9 @@ test('new windows test', async() => {
 
     const allowCookieButton = page.getByRole('button', { name: 'Allow all' })
 
-    page.on('framenavigated', async () => {       
-        
-        if(await allowCookieButton.isVisible()) {
+    page.on('framenavigated', async () => {
+
+        if (await allowCookieButton.isVisible()) {
             await allowCookieButton.click()
         }
     })
@@ -32,13 +37,13 @@ test('new windows test', async() => {
 
     await page.waitForTimeout(3000)
 
-    const pages: Page[] = context.pages()    
-    
-    for(let eachPage of pages) {
+    const pages: Page[] = context.pages()
+
+    for (let eachPage of pages) {
         console.log(await eachPage.title());
-        if(await eachPage.title() !== OrangeHRMTitle) {
+        if (await eachPage.title() !== OrangeHRMTitle) {
             await eachPage.close()
-        }        
+        }
     }
 
     await pages[0].bringToFront()

@@ -34,6 +34,8 @@ export default defineConfig({
     // launchOptions: {
       headless: false,  
       screenshot: 'on',
+      video: 'retain-on-failure',
+      
       // storageState: 'auth/session.json',
     // },
     
