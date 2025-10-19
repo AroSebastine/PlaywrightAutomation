@@ -22,20 +22,27 @@ test('highest cricinfo score test', async ({ page }) => {
 
     type Player = {
         name: string,
-        score: number
+        score: number,
+        balls: number
     }
 
     let playersScores: Player[] = []
+    let allScores: number[] = []
 
     for (let score of allScore) {
         i++
         if (i < 12) {      
+            allScores.push(Number(await score.locator('td').nth(2).innerText()))
+
             playersScores.push({
                 name: await score.locator('td span span').first().innerText(),
-                score: Number(await score.locator('td').nth(2).innerText())
+                score: Number(await score.locator('td').nth(2).innerText()),
+                balls: Number(await score.locator('td').nth(3).innerText())
             })
         }
     }
+    console.log(playersScores);
+    console.log(allScores);
 
     const topScorer = playersScores.reduce((max, player) =>
         player.score > max.score ? player : max
@@ -44,6 +51,4 @@ test('highest cricinfo score test', async ({ page }) => {
     console.log(`Highest score: ${topScorer.score}; Scored by: ${topScorer.name}`);
 
     await page.pause()
-
-
 })
