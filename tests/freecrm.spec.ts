@@ -3,6 +3,7 @@ import * as login from '../data/login.ts'
 
 test('free crm register a user', async({ page }) => {
     await page.goto(login.freeCRMLogin.url)
+    // random check to edit a file and commit to git
 
     const editionCombobox = page.getByRole('combobox')
     const firstNameTextbox = page.getByRole('textbox', { name: 'First Name' })
