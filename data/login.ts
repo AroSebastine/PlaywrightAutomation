@@ -14,3 +14,7 @@ export const freeCRMProLogin = {
     "username": "arosebastinenishanth",
     "password": "Aro123!",
 }
+
+export const practicePages = {
+    "selectors-hub-xpath" = "https://selectorshub.com/xpath-practice-page/",
+}

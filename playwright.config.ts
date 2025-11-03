@@ -33,7 +33,7 @@ export default defineConfig({
     trace: 'off',
     // launchOptions: {
       headless: false,  
-      screenshot: 'on',
+      screenshot: 'only-on-failure',
       video: 'retain-on-failure',
       
       // storageState: 'auth/session.json',
