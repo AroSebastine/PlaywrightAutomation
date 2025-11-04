@@ -1,5 +1,5 @@
 import { test, expect, Page, Locator } from '@playwright/test'
-import { naveenAutomationLabsLogin } from '../data/login.ts'
+import { naveenAutomationLabsLogin, freeCRMLogin, practicePages } from '../data/login.ts'
 
 test('value assertions', async ({ page }) => {
     expect(1 + 1).toBe(2)
@@ -51,4 +51,9 @@ test('page assertions', async({ page }) => {
     await page.goto(naveenAutomationLabsLogin.url)
     await expect(page).toHaveTitle('Account Login')
     await expect(page).toHaveURL(/.*account\/login.*/)
+})
+
+test('web element visible, checked, enable tests', async({ page }) => {
+    await page.goto(freeCRMLogin.url)
+    // leaving the test as the register page has changed.
 })

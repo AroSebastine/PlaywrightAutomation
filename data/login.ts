@@ -16,5 +16,5 @@ export const freeCRMProLogin = {
 }
 
 export const practicePages = {
-    "selectors-hub-xpath" = "https://selectorshub.com/xpath-practice-page/",
+    "selectors-hub-xpath": "https://selectorshub.com/xpath-practice-page/",
 }
