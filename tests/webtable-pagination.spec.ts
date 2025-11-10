@@ -16,12 +16,14 @@ test('xpath practice, web pagination tests', async ({ page }) => {
 
             for (const eachRow of allRows) {                
                 const country: string = await eachRow.locator('//td[@class="column-5"]').innerText()                
+                
+                if (country === "Hong Kong") {    
 
-                if (country === "Hong Kong") {                    
-                    await eachRow.locator('//td[@class="column-1"]/input').click()
+                    await eachRow.locator('//td[@class="column-1"]/input').check()
                     break
                 }
             }
+            
         } else if (await nextPage.isEnabled({ timeout: 3000 })) {
             await nextPage.click()
             await mainLogic()
