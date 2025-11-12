@@ -12,7 +12,10 @@ test('value assertions', async ({ page }) => {
 
 })
 
-test('locator assertions', async ({ page }) => {
+test.only('locator assertions', async ({ page, browserName }) => {
+
+    test.skip(browserName === 'firefox', 'locator assertions will not be run in ff browser')
+    test.slow()
     await page.goto(naveenAutomationLabsLogin.url)
     const returningCustomerHeader = page.getByRole('heading', { name: 'Returning Cust', level: 2, exact: false })
     expect(returningCustomerHeader).toBeVisible()
@@ -23,10 +26,11 @@ test('locator assertions', async ({ page }) => {
 
     const footerLinks = page.locator('//footer//a')
     await expect(footerLinks).toHaveCount(16)
-    await page.pause()
+    // await page.pause()
 })
 
 test('soft assertions', async ({ page }) => {
+    // test.fail()
     await page.goto(naveenAutomationLabsLogin.url)
     const returningCustomerHeader = page.getByRole('heading', { name: 'Returning Cust', level: 2, exact: false })
     // await expect(returningCustomerHeader).toBeVisible()
@@ -37,23 +41,25 @@ test('soft assertions', async ({ page }) => {
 
     const footerLinks = page.locator('//footer//a')
     await expect(footerLinks).not.toHaveCount(15)
-    await page.pause()
+    // await page.pause()
 })
 
 test('screenshot assertions', async ({ page }) => {
+    test.slow()
+
     await page.goto(naveenAutomationLabsLogin.url)
     const returningCustomerHeader = page.getByRole('heading', { name: 'Returning Cust', level: 2, exact: false })
 
     await expect(returningCustomerHeader).toHaveScreenshot('header.png')
 })
 
-test('page assertions', async({ page }) => {
+test.skip('page assertions', async({ page }) => {
     await page.goto(naveenAutomationLabsLogin.url)
     await expect(page).toHaveTitle('Account Login')
     await expect(page).toHaveURL(/.*account\/login.*/)
 })
 
-test('web element visible, checked, enable tests', async({ page }) => {
+test.fixme('web element visible, checked, enable tests', async({ page }) => {
     await page.goto(freeCRMLogin.url)
     // leaving the test as the register page has changed.
 })

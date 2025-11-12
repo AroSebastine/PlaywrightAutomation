@@ -3,12 +3,11 @@ import { practicePages } from '../data/login.ts'
 
 test('web pagination while loop', async ({ page }) => {
     await page.goto(practicePages['selectors-hub-xpath'])
-    const countryToSelect = 'India'
-    const secoundCountryToSelect = 'Russia'
+    const countriesToSelect = ['India', 'Russia']
 
     while(true) {
 
-        const country = page.locator(`//td[text()="${countryToSelect}" or text()="${secoundCountryToSelect}"]`)
+        const country = page.locator(`//td[text()="${countriesToSelect[0]}" or text()="${countriesToSelect[1]}"]`)
         const listOfCountryToSelect = await country.all()
         const isCountryAvailableInPage = listOfCountryToSelect.length > 0        
         const nextButton = page.getByRole('link', { name: 'Next' })   
@@ -25,7 +24,7 @@ test('web pagination while loop', async ({ page }) => {
             break
         }    
 
-        await nextButton.click()               
+        await nextButton.click()              
         
     }
     await page.pause()
