@@ -17,4 +17,6 @@ export const freeCRMProLogin = {
 
 export const practicePages = {
     "selectors-hub-xpath": "https://selectorshub.com/xpath-practice-page/",
+    "calendar-page": "https://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html",
 }
+
