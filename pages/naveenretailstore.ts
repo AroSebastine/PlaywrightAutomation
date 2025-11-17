@@ -13,7 +13,6 @@ export class NaveenRetailStore {
     allLinksWithHREF: Locator
     allImages: Locator
 
-
     constructor(page: Page) {
         this.usernameTextbox = page.getByLabel("E-Mail Address")
         this.passwordTextbox = page.getByLabel("Password")
@@ -25,7 +24,6 @@ export class NaveenRetailStore {
         this.allLinks = page.locator('a')
         this.allLinksWithHREF = page.locator('a[href]') // css
         this.allImages = page.locator('// img[@alt]') // xpath
-    }
- 
+    } 
 }
 
