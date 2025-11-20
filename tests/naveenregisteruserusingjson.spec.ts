@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 import fs from 'fs'
 import { naveenAutomationLabsLogin } from '../data/login.ts';
 import { RegisterUserNaveen } from '../pages/registerusernaveen.ts';
+import { randomEmailGenerator } from '../utilities/general.ts'
 
 interface userData {
     firstName: string,
@@ -18,13 +19,13 @@ for (const user of userRegistrationData) {
         await page.goto(naveenAutomationLabsLogin['register-url'])
         const registrationPage = new RegisterUserNaveen(page)
         await registrationPage.firstNameTextbox.fill(user.firstName)
-        await registrationPage.lastNameTextbox.fill(user.lastName)
-        await registrationPage.emailTextbox.fill(user.email)
+        await registrationPage.lastNameTextbox.fill(user.lastName)        
+        await registrationPage.emailTextbox.fill(randomEmailGenerator())
         await registrationPage.telephoneTextbox.fill(user.telephone)
         await registrationPage.passwordTextbox.fill(user.password)
         await registrationPage.passwordConfirmTextbox.fill(user.password)
         await registrationPage.yesRadioButton.click()
         await registrationPage.agreeCheckBox.check()
-        await registrationPage.continueButton.click()
+        await registrationPage.continueButton.click()        
     })
 }

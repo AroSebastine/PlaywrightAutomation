@@ -1,15 +1,13 @@
 [
     {
         "firstName": "Aro",
-        "lastName": "Hendric",
-        "email": "aroxy@sv.com",
+        "lastName": "Hendric",        
         "telephone": "0468810203",
         "password": "Aro987!"
     },
     {
         "firstName": "Ciara",
-        "lastName": "Aro",
-        "email": "ciaraxy@sv.com",
+        "lastName": "Aro",        
         "telephone": "9677122801",
         "password": "Cia987!"
     }
