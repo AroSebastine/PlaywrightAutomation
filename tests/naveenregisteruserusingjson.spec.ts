@@ -3,7 +3,7 @@ import fs from 'fs'
 import { naveenAutomationLabsLogin } from '../data/login.ts';
 import { RegisterUserNaveen } from '../pages/registerusernaveen.ts';
 
-type userData = {
+interface userData {
     firstName: string,
     lastName: string,
     email: string,
