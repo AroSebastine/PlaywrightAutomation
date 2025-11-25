@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { naveenAutomationLabsLogin } from '../data/login.ts'
 
 test('Check mandatory field and ensure registration is successful when all required fields are filled in',
     async ({ page }) => {
@@ -36,12 +37,12 @@ test('Check mandatory field and ensure registration is successful when all requi
         await expect(telephoneRequiredErrorMessage).toBeVisible()
         await expect(passwordRequiredErrorMessage).toBeVisible()
 
-        await firstNameTextbox.fill('Basmin')
-        await lastNameTextbox.fill('Paul Bagastin')
-        await emailTextbox.fill('basmin1@gmail.com')
+        await firstNameTextbox.fill('Aro')
+        await lastNameTextbox.fill('Hendric')
+        await emailTextbox.fill(naveenAutomationLabsLogin.username)
         await telephoneTextbox.fill('9677122803')
-        await passwordTextbox.fill('Basmin987!')
-        await passwordConfirmTextbox.fill('Basmin987!')
+        await passwordTextbox.fill(naveenAutomationLabsLogin.password)
+        await passwordConfirmTextbox.fill(naveenAutomationLabsLogin.password)
         await yesRadioButton.click()
         await agreeCheckBox.click()
         await continueButton.click()

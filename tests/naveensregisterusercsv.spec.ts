@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import fs from 'fs'
 import { naveenAutomationLabsLogin } from '../data/login.ts';
 import { RegisterUserNaveen } from '../pages/registerusernaveen.ts';
-import { randomEmailGenerator } from '../utilities/general.ts'
+import { randomEmailGenerator } from '../utils/general.ts'
 import { NaveensPageUserData } from '../types/naveensPageUserData.ts';
 import { parse } from 'csv-parse/sync'
 

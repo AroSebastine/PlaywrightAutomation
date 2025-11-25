@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import fs from 'fs'
 import { naveenAutomationLabsLogin } from '../data/login.ts';
 import { RegisterUserNaveen } from '../pages/registerusernaveen.ts';
-import { randomEmailGenerator, randomUserDataGeneratorUsingFaker } from '../utilities/general.ts'
+import { randomEmailGenerator, randomUserDataGeneratorUsingFaker } from '../utils/general.ts'
 import { NaveensPageUserData } from '../types/naveensPageUserData.ts'
 import { faker } from '@faker-js/faker'
 

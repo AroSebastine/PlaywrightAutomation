@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import fs from 'fs'
 import { naveenAutomationLabsLogin } from '../data/login.ts';
 import { RegisterUserNaveen } from '../pages/registerusernaveen.ts';
-import { randomEmailGenerator } from '../utilities/general.ts'
+import { randomEmailGenerator } from '../utils/general.ts'
 
 interface userData {
     firstName: string,
