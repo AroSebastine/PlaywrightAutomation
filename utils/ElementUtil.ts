@@ -13,19 +13,35 @@ export class ElementUtil {
         this.defaultTimeout = timeout
     }
 
-    private getLocator(locator: flexibleLocator): Locator {
+    private getLocator(locator: flexibleLocator, index?: number): Locator {
         if (typeof locator === 'string') {
-            return this.page.locator(locator)
+            if (index) {
+                return this.page.locator(locator).nth(index)
+            } else {
+                return this.page.locator(locator).first()
+            }
+
         } else {
-            return locator
+            if (index) {
+                return locator.nth(index)
+            } else {
+                return locator.first()
+            }
         }
     }
 
-    public async click(locator: flexibleLocator, options?: { force?: boolean, timeout?: number }): Promise<void> {
-        await this.getLocator(locator).click({
-            force: options?.force ?? false,
-            timeout: options?.timeout ?? this.defaultTimeout
-        })
+    public async click(locator: flexibleLocator, options?: { force?: boolean, timeout?: number }, index?: number): Promise<void> {
+        if (index) {
+            await this.getLocator(locator).nth(index).click({
+                force: options?.force ?? false,
+                timeout: options?.timeout ?? this.defaultTimeout
+            })
+        } else {
+            await this.getLocator(locator).first().click({
+                force: options?.force ?? false,
+                timeout: options?.timeout ?? this.defaultTimeout
+            })
+        }
     }
 
     public async rightClick(locator: flexibleLocator, options?: { force?: boolean, timeout?: number }): Promise<void> {
